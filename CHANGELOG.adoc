@@ -1,0 +1,441 @@
+= Change Log
+:author-name: hitsuji no shippo
+:!author-email:
+:author: {author-name}
+:!email: {author-email}
+:revnumber: v1.104.0
+:revdate: 2020-03-19T10:41:01+0900
+:revremark: Add log that fix ignore files of git and eslint.
+:doctype: article
+:description: gatsby-simple-blog-with-asciidoctor Change Log
+:title:
+:title-separtor: :
+:showtitle:
+:!sectnums:
+:sectids:
+:toc: auto
+:sectlinks:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:xrefstyle: full
+:!example-caption:
+:!figure-caption:
+:!table-caption:
+:!listing-caption:
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+ifndef::env-github[:icons: font]
+// Copyright
+:copyright-template: Copyright (c) 2019
+:copyright: {copyright-template} {author-name}
+// Page Attributes
+:page-creation-date: 2019-12-02T10:40:51+0900
+// Variables
+:github-url: https://github.com
+:hitsuji-no-shippo-github-profile-url: {github-url}/hitsuji-no-shippo
+:repository-url: {hitsuji-no-shippo-github-profile-url}/gatsby-simple-blog-with-asciidoctor
+:issues-url: {repository-url}/issues
+
+:gatsby-transformer-asciidoc-url: {hitsuji-no-shippo-github-profile-url}/gatsby-transformer-asciidoc
+:gatsby-transformer-asciidoc-link: link:{gatsby-transformer-asciidoc-url}[ \
+                                        gatsby-transformer-asciidoc^]
+:sample-posts-for-asciidoc-url: {hitsuji-no-shippo-github-profile-url}/sample-posts-with-asciidoc
+== 0.5.0 (2020-03-03)
+
+=== Docs
+
+==== README
+
+* Fix url of aricle-css-for-asciidoc repository link.
+  (link:{issues-url}/189[#189^])
+* Update How to use. (close link:{issues-url}/208[#208^])
+
+==== Chore
+
+* fix ignore files of git and eslint. (link:{issues-url}/210[#210^])
+
+
+== 0.4.0 (2020-03-01)
+
+=== Breaking Changes
+
+* Change the default display config of disqus from non display to display.
+  (close link:{issues-url}/126[#126^])
+* Date display config. (close link:{issues-url}/145[#145^])
+* Update {gatsby-transformer-asciidoc-link} to link:{gatsby-transformer-asciidoc-url}/tree/v0.12.0[
+  v0.12.0]. (close link:{issues-url}/157[#157^]) +
+  Change default value of `enablesEmptyAttribute` to `false`.
+* Set article author name and E-mail to default asciidoc attributes.
+  (close link:{issues-url}/149[#149^])
+* Set asciidoc attributes.
+  (close link:{issues-url}/181[#181^], close link:{issues-url}/188[#188^])
+* Change the way articles are cloned from another repository
+  from git-submodule to npm-script. (close link:{issues-url}/196[#196^])
+* Rename `articles.isOtherRepositroy` to `articles.isAnotherRepository`
+  in config. (close link:{issues-url}/197[#197^])
+* Delete `./deploy` directory. (close link:{issues-url}/205[#205^])
+* Use environment variables to determine which articles repository to clone.
+  (close link:{issues-url}/202[#202^])
+
+=== Features
+
+==== Add
+
+* url into disqus config. (close link:{issues-url}/135[#135^])
+* Link for comment count of disqus.
+  (close link:{issues-url}/133[#133^], close link:{issues-url}/142[#142^])
+* Scroll up at bottom right. (close link:{issues-url}/128[#128^])
+* Home link between realtive post links in article page.
+  (close link:{issues-url}/127[#127^], close link:{issues-url}/141[#141^])
+* Relationship attribute in anchor elements.
+  ** `author` and `external` in bio links. (close link:{issues-url}/153[#153^])
+  ** `alternate` in translation links. (close link:{issues-url}/154[#154^])
+* Profile picture link.
+  (close link:{issues-url}/148[#148^], close link:{issues-url}/175[#175^]
+   close link:{issues-url}/176[#176^])
+* `twitter:creator` in meta. (close link:{issues-url}/150[#150^])
+* Display article author.
+  (close link:{issues-url}/151[#151^], close link:{issues-url}/175[#175^]
+   close link:{issues-url}/176[#176^])
+* The slug to `og:url` meta in index pages. (close link:{issues-url}/163[#163^])
+* Desciription of article in index of tag. (close link:{issues-url}/169[#169^])
+* Replace local link behavior in article with gatsby-link.
+  (close link:{issues-url}/199[#199^]) +
+  Use link:{github-url}/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-catch-links[
+  gatsby-plugin-catch-links^].
+* GitHub Action of deploy to Netlify. (close link:{issues-url}/201[#201^])
+
+==== Update
+
+* Theme icon positions.
+  (close link:{issues-url}/130[#130^], link:{issues-url}/63[#63]) +
+  At the time of implementation (link:{issues-url}/63[#63]),
+  I did not know how to change the position.
+* Prop type from `any` to `string` in `Disqus` component.
+  (close link:{issues-url}/132[#132^])
+* tag list position in index to under the line starting from update date.
+  (close link:{issues-url}/138[#138^])
+* `Made of` to `Built with` of text in footer.
+  (close link:{issues-url}/178[#178^])
+* Block title color in dark theme. (close link:{issues-url}/189[#189^])
+
+
+=== Fix
+
+* npm script. (close link:{issues-url}/161[#161^])
+* `&#39;` to `'` in ensligh 404 message. (close link:{issues-url}/179[#179^])
+* tag link. (close link:{issues-url}/190[#190^])
+* Change default netlify build command to `yarn build` with `netlify.toml`.
+  (close link:{issues-url}/207[#207^])
+
+=== Refactor
+
+* Delete `LinkLetter` component. (close link:{issues-url}/124[#124^]) +
+  Delete to reason is this component not used.
+* Delete theme icons' props. (close link:{issues-url}/129[#129^])
+* Add accessory Informations of article component.
+  (close link:{issues-url}/136[#136^]) +
+  The infos to display are last update date and time to read.
+* Add no-console of eslint-disable into `formatMessage` function.
+  (close link:{issues-url}/144[#144^])
+* Remove `asciidoc.fields.slug` in query in `blog-post.js`.
+  (close link:{issues-url}/139[#139^])
+* Remove `asciidoc.fields.lanKey` in query
+  in `blog-index.js` and `blog-post.js` and `tag-page`.
+  (close link:{issues-url}/140[#140^])
+* Rename variables in `AccessoryInformations` component.
+  (close link:{issues-url}/143[#143^])
++
+--
+.Variables
+* `date` => `dateStr`
+* `time` => `timeToRead`
+--
+* Collect `LanguageBar` component codes. (close link:{issues-url}/155[#155^])
+* Delete useless comments. (close link:{issues-url}/170[#170^])
+* Rename prop from `post` to `article` in `article` component.
+  (close link:{issues-url}/171[#171^])
+* Change `languageContexts` to `homeUrl` of prop in `Article` component.
+  (close link:{issues-url}/164[#164^])
+* Change `location` to `pathname` of prop in `Layout` component.
+  (close link:{issues-url}/172[#172^])
+* Collect codes of `RelativePosts` component to one directory.
+  (close link:{issues-url}/165[#165^])
+* Collect codes of `Layout` component to one directory.
+  (close link:{issues-url}/166[#166^])
+* Rename file from `${component name}.js` to `index.js`.
+  (close link:{issues-url}/167[#167^])
+* Update prop types. (close link:{issues-url}/168[#168^])
+* Delete `show` of prop in `Disqus` component.
+  (close link:{issues-url}/177[#177^], link:{issues-url}/133[#133^])
+* Remove `tFollowTwitterDescription` key in `config/locales/en.js`.
+  (close link:{issues-url}/183[#183^])
+
+=== Docs
+
+==== README
+
+* fix typo `pageAttributes.description` to `pageAttributes.disqus`.
+  (close link:{issues-url}/125[#125^])
+* Organize section positions. (close link:{issues-url}/162[#162^])
+* Fix How to use section positions. (close link:{issues-url}/174[#174^])
+* Fix first column style of table to header.
+  (close link:{issues-url}/185[#185^])
+* Fix `sectids`, `idprefix`, `idseparator` attribute links.
+  (close link:{issues-url}/191[#191^])
+* Add warning of netlify build command. (close link:{issues-url}/195[#195^])
+* Make image link open to a new window. (close link:{issues-url}/203[#203^])
+* Make the table of delete plugins easy to see.
+  (close link:{issues-url}/200[#200^])
+* Add derivative list. (close link:{issues-url}/182[#182^])
+
+==== Demo
+
+* Demo site url. (close link:{issues-url}/186[#186^])
+* link:{sample-posts-for-asciidoc-url}/issues/16[Asciidcotor examples article].
+  (close link:{issues-url}/187[#187^])
+  ** Move custome mark list.
+  ** Add wrap literal.
+  ** Fix title.
+* Make `linksInBio` use `author` in `cofig/index.js`.
+  (close link:{issues-url}/204[#204^])
+
+
+=== Chore
+
+* Change url for submodule of sample articles.
+  (close link:{issues-url}/123[#123])
+* Fix copyright in Hello World article. (close link:{issues-url}/152[#152])
+* Update CI of CircleCI. (close link:{issues-url}/198[#198^])
+
+
+== 0.3.0 (2020-01-11)
+
+=== Breaking Changes
+
+* Change used values for links in bio from `siteMetadata` to `config/index.js`.
+  (close link:{issues-url}/112[#112])
+
+=== Features
+
+==== Add
+
+* Ignore asciidoc in `_includes` directory. (close link:{issues-url}/74[#74])
+* `dir-path-from-project` attribute.
+  (close link:{issues-url}/75[#75], close link:{issues-url}/94[#94])
+* `full-path-from-project` attribute.
+  (close link:{issues-url}/84[#84], close link:{issues-url}/94[#94])
+* Switching of for repositroy link display.
+  (close link:{issues-url}/98[#98], close link:{issues-url}/107[#107],
+   close link:{issues-url}/110[#110])
+* `header` element into `article` element. (close link:{issues-url}/91[#91])
+* Link to edit article on GitHub into artticle footer.
+  (close link:{issues-url}/92[#92], close link:{issues-url}/108[#108],
+   close link:{issues-url}/110[#110])
+* `README.adoc` to ignore files. (close link:{issues-url}/106[#106])
+* `twitter:site` in meta. (close link:{issues-url}/114[#114])
+* `og:url` in meta. (close link:{issues-url}/115[#115])
+* rss support. (close link:{issues-url}/117[#117])
+* Link to tag list in index. (close link:{issues-url}/122[#122])
+* Link that view history in GitHub. (close link:{issues-url}/184[#184])
+  Into article footer.
+
+==== Update
+
+* gatsby-transformer-asciidoc. (close link:{issues-url}/94[#94])
++
+--
+.Update packages
+* {gatsby-transformer-asciidoc-link} +
+  link:{gatsby-transformer-asciidoc-url}/commit/4ade15f0a7172d3a7bd1673a8a4eec84d497161d[
+  Relation commit^]
+--
+* Delete `twitter:creator` in meta. (link:{issues-url}/113[#113])
+* Change `pathPrefix` from `/gatsby-simple-blog` to `/`.
+  (link:{issues-url}/118[#118])
+
+
+=== Fix
+
+* Jump to id. (link:{issues-url}/89[#89]) +
+  link:{gatsby-transformer-asciidoc-url}/commit/080df2810e23c7dee6033d00849ab9afd71dbc36[
+  Fix commit in gatsby-transformer-asciidoc]
+
+=== Security
+
+* Fix prototype pollution in handlebars. (link:{issues-url}/93[#93])
+
+=== Refactor
+
+* Delete unnecessary module. (link:{issues-url}/70[#70])
+* Move code for article header to header file. (link:{issues-url}/90[#90])
+
+=== Docs
+
+* Add netlify status icon in README. (close link:{issues-url}/77[#77])
+* Add deploy to netlify icon in README. (close link:{issues-url}/78[#78])
+* Fix link for {gatsby-transformer-asciidoc-link}.
+  (close link:{issues-url}/80[#80])
+* Make submodule from sample articles. (close link:{issues-url}/83[#83]) +
+  link:{sample-posts-for-asciidoc-url}/tree/bb4b82a2bf8817b7545cdf6f1b7e81cacb957a26[
+       submodule^]
+* Delete unnecessary image in sample articles.
+  (close link:{issues-url}/87[#87]) +
+  link:{sample-posts-for-asciidoc-url}/commit/c56784f4acacec01c789c97499afbae651b0484a[
+        Relatin commit in submodule]
+* Fix description for repository link. (close link:{issues-url}/99[#99])
+
+=== Test
+
+* Fix git submodule command in test script. (close link:{issues-url}/90[#90])
+
+
+== 0.2.0 (2019-12-19)
+
+=== Breaking Changes
+
+* Create articles from markdown to asciidoc. (close link:{issues-url}/12[#12])
+
+=== Features
+
+==== Add
+
+* Asciidoc support for css. (close link:{issues-url}/66[#66])
+
+==== Change
+
+* Element of blog text to `article`. (close link:{issues-url}/31[#31])
+* Theme icon. (close link:{issues-url}/63[#63])
+
+
+=== Fix
+
+* Links to translations article. (close link:{issues-url}/30[#30])
+
+=== Docs
+
+* Add asciidoc examples article. (close link:{issues-url}/29[#29])
+* Delete screenshots in README. (close link:{issues-url}/62[#62])
+* Add link to demo in README. (close link:{issues-url}/68[#68])
+
+
+== 0.1.0 (2019-12-08)
+
+=== Features
+
+==== Change
+
+* Links to SNS profile from icon to text. (close link:{issues-url}/17[#17])
+* Language icon. (close link:{issues-url}/18[#18])
+* Supported language chinese to japanese. (close link:{issues-url}/20[#20])
+* Change gatsby config. (close link:{issues-url}/21[#21])
++
+--
+.Items
+* Author
+* Description
+* twitter id
+* github id
+--
++
+* Make footer link with value of config. (close link:{issues-url}/19[#19])
+* profile icon. (close link:{issues-url}/22[#22])
+
+=== Docs
+
+* Add description in my-second-post.ja.js. (close link:{issues-url}/26[#26])
+* Fix materials used section in README. (close link:{issues-url}/28[#28])
+
+
+== 0.0.1 (2019-12-07)
+
+=== Refactor
+
+* Add processing to run test in npm scripts at commit.
+  (close link:{issues-url}/8[#8])
+
+=== Style
+
+* Unify line feed code to line feed. (close link:{issues-url}/10[#10])
+
+
+=== Docs
+
+* Add my copyright in LICENSE. (close link:{issues-url}/9[#9])
+* Change README. (close link:{issues-url}/5[#5])
++
+--
+.Change items
+* `thundermiracle/gatsby-simple-blog` to
+  `hitsuji-no-shippo/gatsby-simple-blog-with-asciidoctor`
+
+.Delete items
+* Status icons
+* Sample pages section
+--
++
+* Convert README from markdown to asciidoc (close link:{issues-url}/6[#6])
+* Assign attribution to salted duck egg image. (close link:{issues-url}/13[#13])
+* Assign attribution to salted duck egg. (close link:{issues-url}/14[#14])
+* Delete hi-folks article. (close link:{issues-url}/15[#15])
+* Add license section in Hello World article. (close link:{issues-url}/16[#16])
+* change text in my second post article. (close link:{issues-url}/23[#23])
+
+=== Chore
+
+* Change package.json. (close link:{issues-url}/3[#3])
++
+--
+.Change itmes
+* package name
+* author
+* description
+* version
+* urls
+--
++
+
+
+== 0.0.0 (2019-12-02)
+
+=== Docs
+
+* Add Gatsbyjs copyright in LICENSE. (close link:{issues-url}/2[#2])
+
+=== Chore
+
+:thundermiracle-gatsby-simple-blog-url: {github-url}/thundermiracle/gatsby-simple-blog
+* Clone link:{thundermiracle-gatsby-simple-blog-url}[
+  thundermiracle/gatsby-simple-blog]. (close link:{issues-url}/1[#1])
++
+--
+:thundermiracle-gatsby-simple-blog-commit-id: d8537730b37fb08a2171a29ac9c5be3d6458b0bc
+[horizontal]
+repository url:: {thundermiracle-gatsby-simple-blog-url}.git
+commit id     :: link:{thundermiracle-gatsby-simple-blog-url}/commit/{thundermiracle-gatsby-simple-blog-commit-id}[
+                      {thundermiracle-gatsby-simple-blog-commit-id}]
+--
+
+
+== Copyright
+
+=== LICENSE
+
+This document is licensed under
+link:https://creativecommons.org/publicdomain/zero/1.0/[
+CC0 1.0].
+
+
+{copyright-template} link:https://hitsuji-no-shippo.com[{author-name}]
+
+////
+Asciidoc Copyright
+This asciidoc code is licensed under CC0 1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+////
